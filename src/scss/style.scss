@@ -1,0 +1,587 @@
+$white: #fff;
+$black: #262626;
+$purple: #B7AEF2;
+$beige: #F2EEEB;
+
+@mixin adapt-header($height, $radius, $padding, $top) {
+    height: $height;
+    border-radius: $radius;
+    padding: $padding;
+    top: $top;
+}
+
+@mixin section-style($bg, $color) {
+    background-color: $bg;
+    border-radius: 80px;
+    color: $color;
+    margin: 10px;
+}
+
+@mixin infographic($width, $height, $padding) {
+    width: $width;
+    height: $height;
+    padding: $padding;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+body {
+    background-color: $white;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-family: 'Unbounded', cursive;
+}
+
+.normal {
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    @include adapt-header(70px, 30px, 0 40px, 30px);
+    background: $white;
+    position: fixed;
+    width: inherit;
+    z-index: 2;
+    display: flex;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+    &__links {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: $black;
+
+        &--organization {
+            font-size: 24px;
+        }
+
+        &--number {
+            font-size: 18px;
+        }
+
+        a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: $black;
+        }
+    }
+}
+
+.main {
+    @include section-style($purple, $black);
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-top: 130px;
+
+        &__text {
+            position: relative;
+            padding-bottom: 206px;
+
+            &__bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &--subtitle {
+                font-size: 21px;
+                text-align: center;
+                line-height: 29.4px;
+                position: relative;
+                z-index: 1;
+                padding-top: 120px;
+            }
+
+            &--title {
+                font-size: 96px;
+                text-align: center;
+                line-height: 115.2px;
+                margin-top: 20px;
+                position: relative;
+                z-index: 1;
+            }
+        }
+            
+            &--btn-scroll {
+                margin: 0 auto 20px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }   
+    }
+}
+
+.advantages {
+    @include section-style($beige, $black);
+    display: flex;
+    justify-content: center;
+
+    a {
+        color: $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__info {
+        width: 1110px;
+        margin: 80px auto;
+
+        &--title {
+            font-size: 48px;
+            line-height: 57.6px;
+        }
+
+        &__infographics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+
+            &__half {
+
+                &__second {
+                    position: relative;
+                    bottom: 98px;
+                }
+
+                &__item {
+                    display: flex;  
+    
+                    &--text, &__image-block {
+                        background: $white;
+                        border-radius: 50px;
+                    }
+        
+                    &--text {
+                        @include infographic(273px, 300px, 0 20px);
+                        text-align: center;
+                        font-size: 18px;
+                        line-height: 25.2px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+        
+                    &__image-block {
+                        @include infographic(273px, 300px, 50px 26.5px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &--image {
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.footer {
+    @include section-style($black, $white);
+    padding: 80px 0;
+    text-align: center;
+
+    a {
+        color: $white;
+    }
+
+    &__organization {
+        text-align: center;
+        line-height: 29.76px;
+        font-size: 24px;
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        &__item {
+            display: block;
+            text-align: center;
+
+            &--head {
+                font-size: 16px;
+                line-height: 19.2px;
+            }
+
+            &--value {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 25.2px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+/*--------------------------------media queries--------------------------------*/
+
+@media only screen and (min-width : 1281px) {
+    .container {
+        width: 1150px;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1280px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .container {
+        margin: 0 10px;
+        max-width: 1280px;
+    }
+
+    .main, .advantages, .plan, .teacher, .results, .footer {
+        border-radius: 30px;
+    }
+
+    .header {
+        @include adapt-header(60px, 20px, 0 20px, 20px);
+        width: calc(100% - 42px);
+        &__links {
+
+            &--organization {
+                font-size: 20px;
+            }
+
+            &--number {
+                font-size: 16px;
+            }
+        }
+    }
+
+    /*main tablet*/
+
+    .main {
+        &__info {
+            padding-top: 110px;
+
+            &__text {
+                padding-bottom: 231px;
+
+                &--subtitle {
+                    font-size: 18px;
+                    line-height: 25.2px;
+                    padding-top: 80px;
+                }
+    
+                &--title {
+                    font-size: 62px;
+                    line-height: 74.4px;
+                }
+            }
+
+            &--btn-scroll {
+                margin: 0 auto 20px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+        }
+    }
+    
+    /*advantages tablet*/
+
+    .advantages {
+
+        &__info {
+            margin: 60px auto;
+            width: 728px;
+
+            &--title {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            &__infographics {
+
+                &__half {
+                    
+                    &__second {
+                        bottom: 88px;
+                    }
+
+                    .third {
+                        height: 214px;
+                    }
+
+                    &__item {
+
+                        &--text {
+                            font-size: 16px;
+                            line-height: 22.4px;
+                            padding: 0 10px;
+                        }
+
+                        &__image-block {
+                            padding: 30px 12px;
+
+                            &--image {
+                                width: 154px;
+                                height: 140px;
+                            }
+                        }
+
+                        &--text, &__image-block {
+                            width: 178px;
+                            height: 200px;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*footer tablet*/
+
+    .footer {
+        padding: 60px 0;
+
+        &__organization {
+            font-size: 20px;
+            line-height: 24.8px;
+
+            a {
+            font-size: 20px;
+            line-height: 24.8px;
+            margin-top: 60px;
+            }
+        }
+
+        &__data {
+            margin: 40px auto 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &__item {
+                width: 33.3%;
+
+                &--head {
+                    font-size: 14px;
+                    line-height: 16.8px;
+                }
+
+                &--value {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        .footer-address {
+            width: max-content;
+            margin-top: 40px;
+        }
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+
+    html {
+        scroll-padding-top: 60px;
+    }
+
+    .container {
+        margin: 0 12px;
+        max-width: 767px;
+    }
+
+    .main, .advantages, .footer {
+        border-radius: 20px;
+    }
+
+    .advantages, .footer {
+        margin: 4px 0 0 0;
+    }
+
+    .header {
+        @include adapt-header(50px, 16px, 0 16px, 10px);
+        width: calc(100% - 26px);
+
+        &__links {
+
+            &--organization {
+                font-size: 14px;
+            }
+
+            &--number {
+                font-size: 12px;
+            }
+        }
+    }
+
+    /*main mobile*/
+
+    .main {
+        margin: 0;
+
+        &__info {
+            padding-top: 100px;
+
+            &__text {
+                padding-bottom: 84px;
+
+                &--subtitle {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    padding-top: 40px;
+                }
+    
+                &--title {
+                    font-size: 36px;
+                    line-height: 43.2px;
+                    margin-top: 10px;
+                }
+            }
+
+            &--btn-scroll img {
+                width: 40px;
+                height: 40px;
+            }
+
+        }
+    }
+
+    /*advantages mobile*/
+
+    .advantages {
+
+        &__info {
+            margin: 40px auto;
+            text-align: center;
+            width: auto;
+
+            &--title {
+                font-size: 28px;
+                line-height: 33.6px;
+            }
+    
+            &__infographics {
+                flex-direction: column;
+                margin-top: 12px;
+
+                &__half {
+
+                    &__second {
+                        bottom: 0;
+                    }
+                    
+                    &__item {
+                        margin: 8px 0 0;
+                        background-color: #ffffff;
+                        border-radius: 30px;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        align-items: center;
+        
+                        &__image-block {
+                            padding: 16px 0 0;
+                                    
+                            &--image {
+                                width: 110px;
+                                height: 100px;
+                            }
+                        }
+        
+                        &--text {
+                            font-size: 14px;
+                            line-height: 19.6px;
+                            text-align: center;
+                            width: auto;
+                            height: auto;
+                            padding: 14px 20px 16px;
+                        }
+        
+                        &__image-block, &--text {
+                            height: 50%;
+                        }
+        
+                    }
+                }
+            }
+        }
+    }
+
+    /*footer mobile*/
+
+    .footer {
+        padding: 40px 0;
+
+        &__organization {
+            font-size: 20px;
+            line-height: 24.8px;
+        }
+
+        &__data {
+            margin: 20px auto 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            &__item {
+                width: 50%;
+
+                &--head {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                }
+
+                &--value {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    margin-top: 4px;
+                }
+            }
+
+            .footer-tel {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    }
+}

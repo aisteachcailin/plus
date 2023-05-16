@@ -1,2 +1,2 @@
 # Plus IT-company
-https://github.com/aisteachcailin/plus/dist/
+https://aisteachcailin.github.io/plus/dist/

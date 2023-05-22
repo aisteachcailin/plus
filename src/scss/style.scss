@@ -28,7 +28,6 @@ $beige: #F2EEEB;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
 }
 
 html {
@@ -54,10 +53,11 @@ a {
 
 .bold {
     font-family: 'Unbounded', cursive;
+    font-weight: 800;
 }
 
-.normal {
-    font-family: 'Inter', sans-serif;
+.main, .advantages, .footer {
+    font-weight: 500;
 }
 
 .header {

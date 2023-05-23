@@ -1,7 +1,5 @@
-$white: #fff;
-$black: #262626;
-$purple: #B7AEF2;
-$beige: #F2EEEB;
+@use "variables" as *;
+@import "popup";
 
 @mixin adapt-header($height, $radius, $padding, $top) {
     height: $height;

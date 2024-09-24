@@ -1,2 +1,2 @@
 # Plus IT-company
-https://aisteachcailin.github.io/plus/dist/
+https://plus.proton-group.ru/

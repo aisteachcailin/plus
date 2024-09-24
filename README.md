@@ -1,2 +1,2 @@
-# Plus IT-company
+# ООО Плюс
 https://plus.proton-group.ru/
